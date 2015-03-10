@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.web.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+   <center>
+      <VBox BorderPane.alignment="CENTER">
+         <children>
+            <HBox>
+               <children>
+                  <TextField fx:id="addTaskTextField" onAction="#add" prefHeight="25.0" prefWidth="308.0" promptText="Enter items to to add to tasklist" />
+                  <Button fx:id="addButton" mnemonicParsing="false" onAction="#add" prefHeight="25.0" prefWidth="66.0" text="Add task" />
+                  <Button fx:id="saveButton" mnemonicParsing="false" onAction="#save" prefHeight="25.0" prefWidth="103.0" text="Save Changes" />
+               </children>
+            </HBox>
+            <HBox prefHeight="307.0" prefWidth="470.0">
+               <children>
+                  <ListView fx:id="taskList" onEditStart="#initialize" onMouseClicked="#displayDetails" prefHeight="307.0" prefWidth="625.0">
+                     <HBox.margin>
+                        <Insets left="1.0" />
+                     </HBox.margin></ListView>
+                  <TextArea fx:id="taskDetailsTextArea" onMouseExited="#addDetails" onMousePressed="#addDetails" prefHeight="307.0" prefWidth="488.0" wrapText="true">
+                     <padding>
+                        <Insets left="2.0" />
+                     </padding></TextArea>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+   <top>
+      <HBox BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="upButton" mnemonicParsing="false" onAction="#up" prefHeight="24.0" prefWidth="39.0" text="Up">
+               <font>
+                  <Font size="11.0" />
+               </font></Button>
+            <Button fx:id="downButton" mnemonicParsing="false" onAction="#down" prefHeight="24.0" prefWidth="56.0" text="Down">
+               <font>
+                  <Font size="11.0" />
+               </font></Button>
+            <Button fx:id="markAsDoneButton" mnemonicParsing="false" onAction="#markAsDone" prefHeight="24.0" prefWidth="103.0" text="Mark as Done">
+               <font>
+                  <Font size="11.0" />
+               </font></Button>
+            <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#delete" prefHeight="24.0" prefWidth="68.0" text="Delete">
+               <font>
+                  <Font size="11.0" />
+               </font></Button>
+            <TextField fx:id="searchTextField" onAction="#search" prefHeight="24.0" prefWidth="111.0" promptText="Type here to search">
+               <font>
+                  <Font size="11.0" />
+               </font></TextField>
+            <Button fx:id="searchButton" mnemonicParsing="false" onAction="#search" prefHeight="25.0" prefWidth="99.0" text="Search" />
+         </children>
+      </HBox>
+   </top>
+</BorderPane>
